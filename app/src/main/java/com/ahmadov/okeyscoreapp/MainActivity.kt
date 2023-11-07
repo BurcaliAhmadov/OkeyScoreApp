@@ -8,6 +8,7 @@ import android.text.Editable
 import android.view.View
 
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.ahmadov.okeyscoreapp.databinding.ActivityMainBinding
 
 
@@ -208,46 +209,73 @@ class MainActivity : AppCompatActivity() {
         shP1Score1=sharedPreferences.getInt("p1Score1",-1)
         shPlayer1=sharedPreferences.getString("player1","")
 
+
         if( shP1Result!=-1  ){
-            //player1
-            sharedPreferences.edit().remove("p1Result").apply()
-            sharedPreferences.edit().remove("p1Score1").apply()
-            sharedPreferences.edit().remove("player1").apply()
 
-            binding.P1Score1.text=Editable.Factory.getInstance().newEditable("")
-            binding.P1Score2.text=Editable.Factory.getInstance().newEditable("")
-            binding.Player1.text=Editable.Factory.getInstance().newEditable("")
-            binding.P1Netice.text=""
+            val alert = AlertDialog.Builder(this@MainActivity)
+            alert.setTitle("Deleted")
+            alert.setMessage("Are You Sure?")
 
-            //player2
-            sharedPreferences.edit().remove("p2Result").apply()
-            sharedPreferences.edit().remove("p2Score1").apply()
-            sharedPreferences.edit().remove("player2").apply()
+            alert.setPositiveButton("Yes") {dialog, which ->
 
-            binding.P2Score1.text=Editable.Factory.getInstance().newEditable("")
-            binding.P2Score2.text=Editable.Factory.getInstance().newEditable("")
-            binding.Player2.text=Editable.Factory.getInstance().newEditable("")
-            binding.P2Netice.text=""
+                //player1
+                sharedPreferences.edit().remove("p1Result").apply()
+                sharedPreferences.edit().remove("p1Score1").apply()
+                sharedPreferences.edit().remove("player1").apply()
 
-            //player3
-            sharedPreferences.edit().remove("p3Result").apply()
-            sharedPreferences.edit().remove("p3Score1").apply()
-            sharedPreferences.edit().remove("player3").apply()
+                binding.P1Score1.text=Editable.Factory.getInstance().newEditable("")
+                binding.P1Score2.text=Editable.Factory.getInstance().newEditable("")
+                binding.Player1.text=Editable.Factory.getInstance().newEditable("")
+                binding.P1Netice.text=""
 
-            binding.P3Score1.text=Editable.Factory.getInstance().newEditable("")
-            binding.P3Score2.text=Editable.Factory.getInstance().newEditable("")
-            binding.Player3.text=Editable.Factory.getInstance().newEditable("")
-            binding.P3Netice.text=""
+                //player2
+                sharedPreferences.edit().remove("p2Result").apply()
+                sharedPreferences.edit().remove("p2Score1").apply()
+                sharedPreferences.edit().remove("player2").apply()
 
-            //player4
-            sharedPreferences.edit().remove("p4Result").apply()
-            sharedPreferences.edit().remove("p4Score1").apply()
-            sharedPreferences.edit().remove("player4").apply()
+                binding.P2Score1.text=Editable.Factory.getInstance().newEditable("")
+                binding.P2Score2.text=Editable.Factory.getInstance().newEditable("")
+                binding.Player2.text=Editable.Factory.getInstance().newEditable("")
+                binding.P2Netice.text=""
 
-            binding.P4Score1.text=Editable.Factory.getInstance().newEditable("")
-            binding.P4Score2.text=Editable.Factory.getInstance().newEditable("")
-            binding.Player4.text=Editable.Factory.getInstance().newEditable("")
-            binding.P4Netice.text=""
+                //player3
+                sharedPreferences.edit().remove("p3Result").apply()
+                sharedPreferences.edit().remove("p3Score1").apply()
+                sharedPreferences.edit().remove("player3").apply()
+
+                binding.P3Score1.text=Editable.Factory.getInstance().newEditable("")
+                binding.P3Score2.text=Editable.Factory.getInstance().newEditable("")
+                binding.Player3.text=Editable.Factory.getInstance().newEditable("")
+                binding.P3Netice.text=""
+
+                //player4
+                sharedPreferences.edit().remove("p4Result").apply()
+                sharedPreferences.edit().remove("p4Score1").apply()
+                sharedPreferences.edit().remove("player4").apply()
+
+                binding.P4Score1.text=Editable.Factory.getInstance().newEditable("")
+                binding.P4Score2.text=Editable.Factory.getInstance().newEditable("")
+                binding.Player4.text=Editable.Factory.getInstance().newEditable("")
+                binding.P4Netice.text=""
+
+
+
+                //OnClick Listener
+                Toast.makeText(this,"Deleted",Toast.LENGTH_LONG).show()
+            }
+            alert.setNegativeButton("No") {dialog, which ->
+
+                //OnClick Listener
+                Toast.makeText(applicationContext,"Not Deleted",Toast.LENGTH_LONG).show()
+
+            }
+
+            alert.show()
+
+
+
+
+
 
 
         }
