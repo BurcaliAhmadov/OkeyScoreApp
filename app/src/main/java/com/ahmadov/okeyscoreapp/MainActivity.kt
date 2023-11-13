@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
             sharedPreferences.edit().putString("player1",player1).apply()
             sharedPreferences.edit().putInt("p1Result",p1Result!!).apply()
             binding.P1Netice.text="$p1Result"
-            binding.P1Score1.text=Editable.Factory.getInstance().newEditable("$p1Score2")
+            binding.P1Score1.text=Editable.Factory.getInstance().newEditable("$p1Result")
             binding.P1Score2.text=Editable.Factory.getInstance().newEditable("")
 
 
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
             sharedPreferences.edit().putString("player2",player2).apply()
             sharedPreferences.edit().putInt("p2Result",p2Result!!).apply()
             binding.P2Netice.text="$p2Result"
-            binding.P2Score1.text=Editable.Factory.getInstance().newEditable("$p2Score2")
+            binding.P2Score1.text=Editable.Factory.getInstance().newEditable("$p2Result")
             binding.P2Score2.text=Editable.Factory.getInstance().newEditable("")
         }
         else{
@@ -179,7 +179,7 @@ class MainActivity : AppCompatActivity() {
             sharedPreferences.edit().putString("player3",player3).apply()
             sharedPreferences.edit().putInt("p3Result",p3Result!!).apply()
             binding.P3Netice.text="$p3Result"
-            binding.P3Score1.text=Editable.Factory.getInstance().newEditable("$p3Score2")
+            binding.P3Score1.text=Editable.Factory.getInstance().newEditable("$p3Result")
             binding.P3Score2.text=Editable.Factory.getInstance().newEditable("")
         }
         else{
@@ -196,7 +196,7 @@ class MainActivity : AppCompatActivity() {
             sharedPreferences.edit().putString("player4",player4).apply()
             sharedPreferences.edit().putInt("p4Result",p4Result!!).apply()
             binding.P4Netice.text="$p4Result"
-            binding.P4Score1.text=Editable.Factory.getInstance().newEditable("$p4Score2")
+            binding.P4Score1.text=Editable.Factory.getInstance().newEditable("$p4Result")
             binding.P4Score2.text=Editable.Factory.getInstance().newEditable("")
         }
         else{
